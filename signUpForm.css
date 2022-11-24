@@ -1,0 +1,203 @@
+:root {
+  --errorColor: #f00e0e;
+  --validColor: #0add0a;
+}
+
+.modal {
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  z-index: 10;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+}
+
+.modal-content {
+  width: 60%;
+  background-color: #f4f4f4;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 10% auto;
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2);
+  min-height: 500px;
+  position: relative;
+  border-radius: 3px;
+  justify-content: center;
+}
+
+.modal-content-left {
+  position: relative;
+  border-radius: 0 3px 3px 0;
+
+  background-color: rgb(238, 101, 101);
+  background: linear-gradient(
+    90deg,
+    rgba(247, 74, 70, 1) 0%,
+    rgba(236, 43, 0, 1) 100%
+  );
+}
+
+#form-img {
+  width: 80%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 80%;
+  transform: translate(-50%, -50%);
+}
+
+.close-btn {
+  position: absolute;
+  right: 2%;
+  top: 2%;
+  font-size: 1.5rem;
+  z-index: 10;
+  cursor: pointer;
+  color: black;
+}
+
+.close-btn:hover {
+  color: var(--brightred);
+  font-size: 1.7rem;
+  transition: all 0.3s ease-out;
+}
+
+.modal-content-right {
+  position: relative;
+  border-radius: 0 3px 3px 0;
+}
+
+.modal-form {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-form h1 {
+  font-size: 1rem;
+  width: 80%;
+  text-align: start;
+
+  margin-bottom: 1rem;
+}
+
+.form-validation {
+  width: 80%;
+  margin-bottom: 0.5rem;
+}
+
+.form-validation.error {
+  border-radius: 2px;
+  border: 1px solid var(--errorColor);
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+.form-validation.valid {
+  border-radius: 2px;
+  border: 1px solid var(--validColor);
+  position: relative;
+  margin-bottom: 0.5rem;
+}
+
+.form-validation p {
+  font-size: 0.7rem;
+  color: var(--errorColor);
+  margin-bottom: 0.5rem;
+  position: absolute;
+  top: 1.8rem;
+  display: none;
+  margin-top: 0.5rem;
+}
+
+.form-validation.error p {
+  display: block;
+}
+
+.modal-input {
+  display: block;
+  width: 80%;
+  padding-left: 0.5rem;
+  border: none;
+  outline: none;
+  border-radius: 2px;
+  width: 100%;
+  height: 2rem;
+  box-shadow: 1px 1px 1px rgb(0, 0, 0, 0.05);
+}
+
+.modal-input::placeholder {
+  color: var(--brightgray);
+}
+
+.modal-input-btn {
+  width: 80%;
+  height: 2rem;
+  border-radius: 2px;
+  background-color: var(--brightred);
+  outline: none;
+  border: none;
+  color: white;
+  font-size: 1rem;
+}
+
+.modal-input-btn:hover {
+  cursor: pointer;
+  background-color: var(--lightblue);
+  transition: all 0.4s ease-out;
+}
+
+.modal-input-login {
+  width: 80%;
+  font-size: 0.8rem;
+  text-align: center;
+  color: var(--lightgray);
+  margin-top: 1rem;
+}
+
+.modal-input-login a {
+  text-decoration: none;
+  color: var(--brightred);
+  font-size: 600;
+}
+
+@media screen and (max-width: 768px) {
+  .modal-content-left {
+    display: none;
+  }
+
+  .modal-content {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    height: 75%;
+    margin: 15% auto;
+  }
+
+  .modal-input-btn {
+    font-size: 1.3rem;
+  }
+
+  .modal-form h1 {
+    font-size: 1.3rem;
+  }
+}
+
+@media screen and (max-width: 580px) {
+  .modal-content {
+    margin: 20% auto;
+    width: 90%;
+    height: 90%;
+  }
+}

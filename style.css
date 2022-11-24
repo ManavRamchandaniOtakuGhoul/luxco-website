@@ -1,0 +1,199 @@
+@import url(homePage.css);
+@import url(signUpForm.css);
+@import url(gallery.css);
+@import url(footer.css);
+@import url(creadit.css);
+
+:root {
+  --darkgrey: #212329;
+  --brightred: #f9423d;
+  --white: #fff;
+  --lightred: #f9433dcc;
+  --lightblue: #337af1;
+  --lightgray: #b1b1b1;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: "Nunito", sans-serif;
+}
+
+/* -----------------------------------------navbar------------------------------------------------------------ */
+
+.nav-container {
+  width: 100vw;
+  background-color: var(--darkgrey);
+}
+
+.navbar {
+  display: grid;
+  grid-template-columns: 0.2fr auto 1fr;
+  align-items: center;
+  width: 90%;
+  height: 80px;
+  max-width: 1720px;
+  margin: 0 auto;
+}
+
+.nav-logo {
+  margin-left: 20px;
+  justify-self: start;
+  color: white;
+}
+
+.nav-logo {
+  cursor: pointer;
+}
+.navMenu {
+  display: grid;
+  grid-template-columns: repeat(5, auto);
+  list-style: none;
+  align-items: center;
+  width: 70%;
+  justify-self: end;
+  /* display: flex;
+  justify-self: end; */
+}
+
+.menuLinks {
+  /* margin-right: 40px; */
+  text-decoration: none;
+  color: white;
+}
+
+.menuLinks:hover {
+  color: var(--brightred);
+  transition: all 0.2s ease-out;
+}
+
+.navLinksBtn {
+  background-color: var(--brightred);
+  padding: 6px 16px;
+  border-radius: 6px;
+}
+
+.navLinksBtn:hover {
+  background-color: transparent;
+  border: 1px solid var(--brightred);
+  border-radius: 4px;
+  color: white;
+  transition: all 0.3s ease-out;
+  padding: 5px 15px;
+}
+
+.menuToggle {
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  transition: all 0.3s ease-in-out;
+  display: block;
+  cursor: pointer;
+}
+
+.bar {
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  transition: all 0.3s ease-in-out;
+  background-color: white;
+  display: none;
+  cursor: pointer;
+}
+
+/* -----------------------------------------navbar completed------------------------------------------------------------ */
+
+@media screen and (max-width: 768px) {
+  /* -----------------------------------------navbar------------------------------------------------------------ */
+
+  .nav-container {
+    position: relative;
+  }
+
+  .navMenu {
+    display: grid;
+    grid-template-columns: auto;
+    background-color: var(--brightred);
+    margin: 0;
+    width: 100%;
+    position: absolute;
+    top: 80px;
+    left: -100%;
+    opacity: 0;
+    transition: all 0.5s ease;
+    text-align: center;
+  }
+
+  .nav-logo {
+    margin-left: 20px;
+  }
+
+  .navMenu.active {
+    background-color: var(--darkgrey);
+    opacity: 1;
+    left: 0;
+    transition: all 0.5s ease;
+  }
+
+  .menuLinks {
+    line-height: 60px;
+    width: 100%;
+    display: table;
+  }
+
+  .navbar {
+    width: 100%;
+  }
+
+  .menuLinks:hover {
+    background-color: var(--brightred);
+    color: white;
+    transition: all 0.4s ease-out;
+  }
+
+  .navLinksBtn {
+    padding: 0;
+    border-radius: 0;
+    background-color: var(--darkgrey);
+    color: white;
+    transition: all 0.4s ease-out;
+  }
+
+  .navLinksBtn:hover {
+    padding: 0;
+    border-radius: 0;
+    background-color: var(--brightred);
+    color: white;
+    transition: all 0.4s ease-out;
+  }
+  .bar {
+    display: block;
+  }
+
+  #mobileMenu {
+    display: block;
+    position: absolute;
+    top: 20%;
+    right: 5%;
+    transform: translate(5%, 20%);
+  }
+
+  #mobileMenu:hover {
+    cursor: pointer;
+  }
+
+  #mobileMenu.is-active .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  #mobileMenu.is-active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  #mobileMenu.is-active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  /* -----------------------------------------navbar completed------------------------------------------------------------ */
+}

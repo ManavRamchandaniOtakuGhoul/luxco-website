@@ -1,0 +1,37 @@
+:root {
+  --darkgrey: #212329;
+  --brightred: #f9423d;
+  --white: #fff;
+  --lightred: #f9433dcc;
+  --lightblue: #337af1;
+  --lightgray: #b1b1b1;
+}
+
+.creadit-container {
+  background-color: var(--darkgrey);
+  width: 100vw;
+}
+
+.creadit {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  text-align: center;
+}
+
+.creadit p {
+  color: var(--white);
+  font-weight: 100;
+}
+
+.contact-link {
+  padding: 0.5rem 0;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+.contact-link a {
+  color: var(--brightred);
+  font-size: 1.3rem;
+}

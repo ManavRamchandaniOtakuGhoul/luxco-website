@@ -1,0 +1,134 @@
+.main {
+  background-color: var(--darkgrey);
+  width: 100vw;
+}
+
+.main-container {
+  display: flex;
+  margin: 0 auto;
+  justify-self: center;
+  align-items: center;
+  height: 90vh;
+  width: 80%;
+}
+
+.main-content {
+  flex-basis: 50%;
+  width: 80%;
+  justify-self: start;
+  margin-left: 20px;
+  color: white;
+}
+
+.main-content h1 {
+  font-size: 2rem;
+}
+
+.main-content p {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+}
+
+.main-img-container {
+  flex-basis: 50%;
+}
+
+.main-btn {
+  outline: none;
+  border: none;
+  background-color: var(--brightred);
+  color: white;
+  padding: 8px 20px;
+  border-radius: 4px;
+  margin-top: 2rem;
+  position: relative;
+  transition: all 3.5s;
+}
+
+.main-btn a {
+  position: relative;
+  color: white;
+  text-decoration: none;
+  z-index: 2;
+}
+
+.main-btn::after {
+  content: "";
+  background-color: var(--lightblue);
+  width: 0;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: all 2.5s;
+  border-radius: 4px;
+}
+
+.main-btn:hover {
+  color: white;
+}
+
+.main-btn:hover:after {
+  width: 100%;
+}
+
+#main-img {
+  width: 80%;
+  height: 80%;
+}
+
+/* -------------------------------------------------mobile home screen----------------------------------------- */
+
+@media (max-width: 768px) {
+  .main-container {
+    display: grid;
+    grid-template-columns: auto;
+    align-items: center;
+    justify-items: center;
+    width: 90%;
+    height: 90vh;
+    margin: 0 auto;
+    background-color: var(--darkgrey);
+  }
+
+  .main-content {
+    justify-self: center;
+    color: white;
+    margin: 0;
+    width: 80%;
+  }
+
+  .main-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .main-content p {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+  }
+
+  #main-img {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-content {
+    justify-self: center;
+    text-align: center;
+  }
+
+  .main-content h1 {
+    font-size: 3rem;
+  }
+
+  .main-content p {
+    font-size: 1.5rem;
+    margin-top: 2rem;
+  }
+
+  .main-btn {
+    padding: 12px 36px;
+    margin-top: 2.5rem;
+  }
+}
